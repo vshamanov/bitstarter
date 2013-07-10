@@ -6,7 +6,7 @@ app.get('/', function(request, response) {
     var fs = require('fs');
     var index_html = fs.readFileSync("index.html");
     var buf = new Buffer(index_html);
-    for (var i = 0; i < fileName.length; i++){
+    for (var i = 0; i < index_html.length; i++){
 	buf[i] = str.charCodeA(i);
 	}
     response.send(buf.toString());
