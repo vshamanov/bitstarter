@@ -15,7 +15,7 @@ app.get('/', function(request, response) {
     for (var i = 0; i < fileName.length; i++){
 	buf[i] = str.charCodeA(i);
 	}
-    response.send(buf);
+    response.send(buf.toString());
 });
 
 var port = process.env.PORT || 5000;
