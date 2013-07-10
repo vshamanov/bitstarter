@@ -6,10 +6,14 @@ var app = express.createServer(express.logger());
 var hello_world = fs.readFile('index.html', function (err, data) {
   if (err) throw err;
   buff.toString(data);
-});
+}); 
 
 app.get('/', function(request, response) {
-    response.send(hello_world);
+    response.send(
+	fs.readFile('index.html', function (err, data) {
+	    if (err) throw err;
+	    buff.toString(data);
+	);
 });
 
 var port = process.env.PORT || 5000;
