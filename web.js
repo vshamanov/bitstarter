@@ -1,12 +1,6 @@
 var express = require('express');
 
-var app = express.createServer(express.logger());
-
-
-var hello_world = fs.readFile('index.html', function (err, data) {
-  if (err) throw err;
-  buff.toString(data);
-}); 
+var app = express.createServer(express.logger()); 
 
 app.get('/', function(request, response) {
     var fs = require('fs');
