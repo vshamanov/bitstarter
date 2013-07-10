@@ -9,11 +9,13 @@ var hello_world = fs.readFile('index.html', function (err, data) {
 }); 
 
 app.get('/', function(request, response) {
-    response.send(
-	fs.readFile('index.html', function (err, data) {
-	    if (err) throw err;
-	    buff.toString(data);
-	);
+    var fs = require('fs');
+    var index_html = fs.readFileSync("index.html");
+    var buf = new Buffer(index_html);
+    for (var i = 0; i < fileName.length; i++){
+	buf[i] = str.charCodeA(i);
+	}
+    response.send(buf);
 });
 
 var port = process.env.PORT || 5000;
